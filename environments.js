@@ -24,6 +24,11 @@ module.exports = {
     client: './bench/sio087/client_poll.js',
     out: './results/sio087poll/'
   },
+  '1.0.6': {
+    server: './bench/sio106/server.js',
+    client: './bench/sio106/client.js',
+    out: './results/sio106/'
+  },
   'tcp': {
     server: './bench/tcp/server_tcp.js',
     client: './bench/tcp/client_tcp.js',
