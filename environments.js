@@ -1,37 +1,37 @@
 module.exports = {
-  '0.6.17': {
-    server: './bench/sio0617/server.js',
-    client: './bench/sio0617/client.js',
-    out: './results/sio0617/'
+  '1.1.0': {
+    server: './bench/sio110/server.js',
+    client: './bench/sio110/client.js',
+    out: './results/sio110/'
   },
-  '0.6.17_poll': {
-    server: './bench/sio0617/server.js',
-    client: './bench/sio0617/client_poll.js',
-    out: './results/sio0617poll/'
+  '1.2.1': {
+    server: './bench/sio121/server.js',
+    client: './bench/sio121/client.js',
+    out: './results/sio121/'
   },
-  '0.7.11': {
-    server: './bench/sio0711/server.js',
-    client: './bench/sio0711/client.js',
-    out: './results/sio0711/'
+  '1.3.3': {
+    server: './bench/sio133/server.js',
+    client: './bench/sio133/client.js',
+    out: './results/sio133/'
   },
-  '0.8.7': {
-    server: './bench/sio087/server.js',
-    client: './bench/sio087/client.js',
-    out: './results/sio087/'
+  '1.3.4': {
+    server: './bench/sio134/server.js',
+    client: './bench/sio134/client.js',
+    out: './results/sio134/'
   },
-  '0.8.7_poll': {
-    server: './bench/sio087/server.js',
-    client: './bench/sio087/client_poll.js',
-    out: './results/sio087poll/'
+  '1.3.5': {
+    server: './bench/sio135/server.js',
+    client: './bench/sio135/client.js',
+    out: './results/sio135/'
   },
-  '1.0.6': {
-    server: './bench/sio106/server.js',
-    client: './bench/sio106/client.js',
-    out: './results/sio106/'
+  '1.3.6': {
+    server: './bench/sio136/server.js',
+    client: './bench/sio136/client.js',
+    out: './results/sio136/'
   },
-  'tcp': {
-    server: './bench/tcp/server_tcp.js',
-    client: './bench/tcp/client_tcp.js',
-    out: './results/tcp/'
+  '1.3.6-patch': {
+    server: './bench/sio136-patch/server.js',
+    client: './bench/sio136-patch/client.js',
+    out: './results/sio136-patch/'
   }
 };

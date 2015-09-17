@@ -1,22 +1,26 @@
-var net = require('net');
+var sio = require('socket.io');
 
 function createServer(Controller) {
+  var io = sio.listen(8000);
+  io.set('log level', 1);
+
+  console.log('SIO server listening at 8000');
+
   var counter = 0;
-  var server = net.createServer(function(client){
+  io.sockets.on('connection', function(client){
     var index = counter++;
     Controller.clientConnect(index);
 
-    client.on('data', function(data){
+    client.on('message', function(data){
       Controller.clientMessage(index);
-      client.write(data);
+      client.send(data);
+
     });
     client.on('disconnect', function(){
       Controller.clientDisconnect(index);
     });
-
   });
-  server.listen(8000);
-  console.log('TCP server listening at 8000');
+
 }
 
 module.exports = createServer;

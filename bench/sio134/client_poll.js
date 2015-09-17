@@ -1,20 +1,17 @@
 
 // SOCKET IO bench
-var io = require('node-socket.io-client');
+var io = require('socket.io-client');
 
 var opts = {
-  url: 'localhost',
-  transport: 'websocket',
-  secure: false,
-  port: 8000
+  transports: ['xhr-polling', 'xhr-polling', 'xhr-polling', 'xhr-polling', 'xhr-polling'], // workaround for https://github.com/LearnBoost/socket.io-client/issues/310
+  'force new connection': true // undocumented option
 };
 
 function createClient(index, controller) {
-  var client = new io.Socket(opts.url, opts);
-  client.on('connect', function(){ console.log('Client connected', index); controller.clientConnect(index); });
+  var client = io.connect('http://localhost:8000', opts);
+  client.on('connect', function(){ controller.clientConnect(index); });
   client.on('message', function(){ controller.clientMessage(index); });
   client.on('disconnect', function(){ controller.clientDisconnect(index); });
-  client.connect();
 
   return client;
 }

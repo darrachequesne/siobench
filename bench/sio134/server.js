@@ -1,17 +1,13 @@
-var http = require('http'),
-      io = require('socket.io');
+var sio = require('socket.io');
 
 function createServer(Controller) {
-  var server = http.createServer(function(req, res){
-      res.end('Server running');
-  });
-  server.listen(8000);
+  var io = sio.listen(8000);
+  io.set('log level', 1);
+
   console.log('SIO server listening at 8000');
 
-  var socket = io.listen(server);
   var counter = 0;
-  socket.on('connection', function(client){
-    console.log('CONNECTION', client.sessionId);
+  io.sockets.on('connection', function(client){
     var index = counter++;
     Controller.clientConnect(index);
 
@@ -21,7 +17,6 @@ function createServer(Controller) {
 
     });
     client.on('disconnect', function(){
-      console.log('DISCONNECT', client.sessionId);
       Controller.clientDisconnect(index);
     });
   });

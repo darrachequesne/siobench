@@ -1,16 +1,18 @@
-{ "name": "siobench",
+{
+  "name": "siobench",
   "description": "Socket IO benchmarking tool",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url":  "git://github.com/mixu/siobench.git" },
-  "dependencies": {
-    "getrusage": "git://github.com/davglass/node-getrusage.git#master",
-    "nodeunit": "0.5.x",
-    "nodeunit-runner": "git://github.com/mixu/nodeunit-runner.git#master",
-    "wormhole": "3.0.x",
-    "mkdirp": "0.2.x",
-    "microtime": "1.0.1"
+    "url": "git://github.com/mixu/siobench.git"
   },
- "private":true
+  "dependencies": {
+    "getrusage": "1.0.x",
+    "microtime": "1.0.1",
+    "mkdirp": "0.2.x",
+    "nodeunit": "0.5.x",
+    "nodeunit-runner": "https://github.com/mixu/nodeunit-runner.git#master",
+    "wormhole": "3.0.x"
+  },
+  "private": true
 }
